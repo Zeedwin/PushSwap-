@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:51:44 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/08/22 21:11:15 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/08/23 22:08:07 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,24 @@ void createmid_node(node* Node, int n)
 	Node->next = new_node; 	
 }
 
-void insert_sorted(node** head, int n)
+void create_sorted(node** head, int n)
 {
-	if (*head == NULL || (*head)->x){
+	if (*head == NULL || (*head)->x >= n){
 		createtop_node(head, n);
 		return ;
 	}
 	node* curr = *head;
+	while (curr->next != NULL) {
+		if (curr->next->x >= n) {
+			create_no de(&curr, n);
+			return ;	
+		}	
+		if (curr->next->x <= n) {
+		createmid_node(curr, n);	
+		}
+		curr = curr->next;
+	}
+	create_node(&curr, n);
 }
 
 int main (int argc, char* argv[]) {
@@ -97,10 +108,15 @@ int main (int argc, char* argv[]) {
 
 	(void) argc;
 	(void) argv;
-	create_node(&head, 14);
-	create_node(&head, 2);
-	create_node(&head, 7);
-	createmid_node(head->next->next, 8);
+
+	create_node(&head, 24);
+	create_node(&head, 34);
+	create_node(&head, 64);
+	create_sorted(&head, 4);
+	create_sorted(&head, 2);
+	create_sorted(&head, 1);
+	
+	
 	for (node* curr = head; curr != NULL; curr = curr->next)
 	{
 		printf("%d\n", curr->x);
