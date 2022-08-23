@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:51:44 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/08/23 22:08:07 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/08/23 22:31:33 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void create_sorted(node** head, int n)
 	node* curr = *head;
 	while (curr->next != NULL) {
 		if (curr->next->x >= n) {
-			create_no de(&curr, n);
+			create_node(&curr, n);
 			return ;	
 		}	
 		if (curr->next->x <= n) {
