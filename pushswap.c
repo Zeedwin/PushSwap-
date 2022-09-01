@@ -6,17 +6,11 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 21:51:44 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/08/23 22:31:33 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/08/31 23:56:30 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
-struct stack_a {
-	int x;
-	struct stack_a* next;
-};
-typedef struct stack_a node;
 
 void printarray_list(node *head)
 {
@@ -25,7 +19,7 @@ void printarray_list(node *head)
 	while (tmp != NULL){
 		printf("%d \n", tmp->x);
 		tmp = tmp->next;
-	}	
+	}
 }
 
 void freelist(node** head)
@@ -103,6 +97,25 @@ void create_sorted(node** head, int n)
 	create_node(&curr, n);
 }
 
+void remove_elem(node** head, int n) {
+	if (*head == NULL) {
+		return;
+	}
+	if ((*head)->x == n) {
+		node* rem = *head;
+		*head  = (*head)->next;
+		free(rem);  
+		return;
+	}
+	 for (node* curr = *head; curr->next != NULL; curr = curr->next){
+		 if (curr->next->x == n) {
+			 node* rem = curr->next;
+			 curr->next = curr->next->next;
+			 free(rem);
+		 }
+	 }
+}
+
 int main (int argc, char* argv[]) {
 	node* head = NULL;
 
@@ -116,6 +129,8 @@ int main (int argc, char* argv[]) {
 	create_sorted(&head, 2);
 	create_sorted(&head, 1);
 	
+	remove_elem(&head, 1);
+	remove_elem(&head, 4); 
 	
 	for (node* curr = head; curr != NULL; curr = curr->next)
 	{

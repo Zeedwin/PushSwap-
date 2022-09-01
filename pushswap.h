@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/14 20:49:03 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/08/14 21:11:06 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/09/01 04:49:56 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+struct stack_a {
+	int x;
+	int data;
+	struct stack_a *next;
+};
+typedef struct stack_a node;
+
 #endif
