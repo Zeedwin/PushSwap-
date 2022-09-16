@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 20:49:03 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/09/01 04:49:56 by jgirard-         ###   ########.fr       */
+/*   Created: 2022/08/14 20:409:03 by jgirard-          #+#    #+#             */
+/*   Updated: 2022/09/12 16:14:54 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,24 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-struct stack_a {
-	int x;
+typedef struct list
+{
+	int index;
 	int data;
-	struct stack_a *next;
-};
-typedef struct stack_a node;
+	struct list *next;
+}			node;
+
+int sa(node **list);
+int sb(node **list);
+int rr(node **list);
+int rra(node **list);
+int rrb(node **list);
+int rrr(node **list);
+int ra(node **list);
+int rb(node **list);
+int pa(node **list);
+int pb(node **list);
+
+
 
 #endif
