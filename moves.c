@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 23:11:39 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/09/25 00:03:39 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/09/25 00:17:32 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,19 @@ int swap(l_list **stack)
 	head->index =next->index;
 	next->data = tmp_data;
 	next->index = tmp_index;
-	
-	
-	
+	return(0);
+}
+
+int sa(l_list **stack_a)
+{
+	if (swap(stack_a) == -1)
+		ft_putendl_fd("sa", 1);
+	return(0);
+}
+
+int sb(l_list **stack_a)
+{
+	if (swap(stack_a) == -1)
+		ft_putendl_fd("sb", 1);
+	return(0);
 }
