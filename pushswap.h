@@ -21,19 +21,19 @@ typedef struct list
 	int index;
 	int data;
 	struct list *next;
-}			node;
-
-int sa(node **list);
-int sb(node **list);
-int rr(node **list);
-int rra(node **list);
-int rrb(node **list);
-int rrr(node **list);
-int ra(node **list);
-int rb(node **list);
-int pa(node **list);
-int pb(node **list);
-
+}l_list;
+int ft_lstsize(l_list *stack);
+int sa(l_list **list);
+int sb(l_list **list);
+int rr(l_list **list);
+int rra(l_list **list);
+int rrb(l_list **list);
+int rrr(l_list **list);
+int ra(l_list **list);
+int rb(l_list **list);
+int pa(l_list **list);
+int pb(l_list **list);
+void error(char *c);
 
 
 #endif
