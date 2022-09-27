@@ -43,3 +43,12 @@ void error(char *c)
 	ft_putendl_fd(c, 1);
 	exit(1);
 }
+
+l_list  *ft_lstlast(l_list *lst)
+{
+        if (!lst)
+                return (NULL);
+        while (lst->next != NULL)
+                lst = lst->next;
+        return (lst);
+}
