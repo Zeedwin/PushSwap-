@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 17:46:59 by juleng            #+#    #+#             */
-/*   Updated: 2022/10/01 02:22:47 by juleng           ###   ########.fr       */
+/*   Updated: 2022/10/01 18:38:40 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	free_str(char **str)
 {
@@ -22,7 +22,6 @@ void	free_str(char **str)
 	while (i >= 0)
 		free(str[i--]);
 }
-
 
 int	get_range(t_list **stack, int index)
 {
@@ -40,7 +39,6 @@ int	get_range(t_list **stack, int index)
 	}
 	return (range);
 }
-
 
 void	free_stack(t_list **stack)
 {

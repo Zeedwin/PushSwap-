@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   start_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 16:15:53 by juleng            #+#    #+#             */
-/*   Updated: 2022/09/30 16:18:29 by juleng           ###   ########.fr       */
+/*   Updated: 2022/10/01 19:02:14 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static t_list	*find_min2(t_list **stack)
 {

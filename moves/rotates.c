@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotates.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:32:37 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/09/30 18:27:27 by juleng           ###   ########.fr       */
+/*   Updated: 2022/10/01 18:35:15 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-int rotate(t_list **stack)
+int	rotate(t_list **stack)
 {
 	t_list	*head;
 	t_list	*tail;
@@ -27,7 +27,7 @@ int rotate(t_list **stack)
 	return (0);
 }
 
-int ra(t_list **stack_a)
+int	ra(t_list **stack_a)
 {
 	if (rotate(stack_a) == -1)
 		return (-1);
@@ -35,7 +35,7 @@ int ra(t_list **stack_a)
 	return (0);
 }
 
-int rb(t_list **stack_b)
+int	rb(t_list **stack_b)
 {
 	if (rotate(stack_b) == -1)
 		return (-1);
@@ -43,7 +43,7 @@ int rb(t_list **stack_b)
 	return (0);
 }
 
-int rr(t_list **stack_a, t_list **stack_b)
+int	rr(t_list **stack_a, t_list **stack_b)
 {
 	if ((ft_lstsize(*stack_a) < 2) || (ft_lstsize(*stack_b) < 2))
 		return (-1);

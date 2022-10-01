@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:44:53 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/10/01 15:01:51 by juleng           ###   ########.fr       */
+/*   Updated: 2022/10/01 19:43:56 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	start_stack(t_list **stack, int argc, char **argv)
 		free_str(args);
 }
 
-void	sort_stack(t_list **stack_a, t_list **stack_b)
+void	pick_sort(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) <= 5)
 		mini_sort(stack_a, stack_b);
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 		free_stack(stack_b);
 		return (0);
 	}
-	sort_stack(stack_a, stack_b);
+	pick_sort(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

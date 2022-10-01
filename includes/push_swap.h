@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                         :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 20:409:03 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/09/12 16:14:54 by jgirard-         ###   ########.fr       */
+/*   Created: 2022/10/01 18:45:31 by jgirard-          #+#    #+#             */
+/*   Updated: 2022/10/01 18:48:53 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
 
 typedef struct list
 {
-	int index;
-	int data;
-	struct list *next;
+	int			index;
+	int			data;
+	struct list	*next;
 }t_list;
 
 //Algo Library:
@@ -37,21 +37,21 @@ void	arg_checker(int argc, char **argv);
 
 //Moves Library:
 
-int 	swap(t_list **stack);
-int 	ft_lstsize(t_list *stack);
-int 	sa(t_list **t_list);
-int 	sb(t_list **t_list);
-int 	rr(t_list **stack_a, t_list **stack_b);
-int 	rra(t_list **t_list);
+int		swap(t_list **stack);
+int		ft_lstsize(t_list *stack);
+int		sa(t_list **t_list);
+int		sb(t_list **t_list);
+int		rr(t_list **stack_a, t_list **stack_b);
+int		rra(t_list **t_list);
 int		rrb(t_list **t_list);
-int 	rrr(t_list **stack_a, t_list **stack_b);
-int 	ra(t_list **t_list);
-int 	rb(t_list **list);
-int 	pa(t_list **stack_a, t_list **stack_b);
-int 	pb(t_list **stack_a, t_list **stack_b);
-void 	error(char *c);
+int		rrr(t_list **stack_a, t_list **stack_b);
+int		ra(t_list **t_list);
+int		rb(t_list **list);
+int		pa(t_list **stack_a, t_list **stack_b);
+int		pb(t_list **stack_a, t_list **stack_b);
+void	error(char *c);
 void	ft_putendl_fd(char *s, int fd);
-t_list  *ft_lstlast(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
 
 //Libft Library:
 
@@ -102,4 +102,3 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
-

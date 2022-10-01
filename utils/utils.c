@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 22:21:57 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/09/30 18:43:37 by juleng           ###   ########.fr       */
+/*   Updated: 2022/10/01 18:40:17 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	ft_lstsize(t_list *stack)
 {
@@ -38,19 +38,19 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 
-void error(char *c)
+void	error(char *c)
 {
 	ft_putendl_fd(c, 1);
 	exit(1);
 }
 
-t_list  *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-        if (!lst)
-                return (NULL);
-        while (lst->next != NULL)
-                lst = lst->next;
-        return (lst);
+	if (!lst)
+		return (NULL);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
 
 t_list	*ft_lstnew(int data)

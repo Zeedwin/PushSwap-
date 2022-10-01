@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   argchecker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:09:44 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/10/01 15:21:15 by juleng           ###   ########.fr       */
+/*   Updated: 2022/10/01 18:49:23 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 static int	conver_check(int tmp, char **argv, int i)
 {
@@ -38,7 +38,6 @@ int	check_sort(t_list **stack)
 	return (1);
 }
 
-
 static int	num_ver(char *num)
 {
 	int	i;
@@ -60,7 +59,7 @@ void	arg_checker(int argc, char **argv)
 	int		i;
 	long	tmp;
 	char	**args;	
-	
+
 	i = 0;
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');

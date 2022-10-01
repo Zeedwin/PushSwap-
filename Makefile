@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRCS =  $(wildcard src/*.c utils/*.c algo/*.c moves/*.c)
-CHECK_SRCS = $(wildcard utils/*.c) src/instructions.c checker.c
+CHECK_SRCS = $(wildcard utils/*.c)
 
 OBJS = ${SRCS:.c=.o}
 CHECK_OBJS = ${CHECK_SRCS:.c=.o}

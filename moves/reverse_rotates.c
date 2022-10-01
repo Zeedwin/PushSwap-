@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotates.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juleng <juleng@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 21:44:11 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/09/30 16:14:00 by juleng           ###   ########.fr       */
+/*   Updated: 2022/10/01 18:37:11 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
-int reverse_rotate(t_list **stack)
+int	reverse_rotate(t_list **stack)
 {
 	t_list	*head;
 	t_list	*tail;
@@ -26,7 +26,7 @@ int reverse_rotate(t_list **stack)
 		if (head->next->next == NULL)
 		{
 			head->next = NULL;
-			break;
+			break ;
 		}
 		head = head->next;
 	}
@@ -35,23 +35,23 @@ int reverse_rotate(t_list **stack)
 	return (0);
 }
 
-int rra(t_list **stack_a)
+int	rra(t_list **stack_a)
 {
-	if(reverse_rotate(stack_a) == -1)
+	if (reverse_rotate(stack_a) == -1)
 		return (-1);
 	ft_putendl_fd("rra", 1);
 	return (0);
 }
 
-int rrb(t_list **stack_b)
+int	rrb(t_list **stack_b)
 {
-	if(reverse_rotate(stack_b) == -1)
+	if (reverse_rotate(stack_b) == -1)
 		return (-1);
 	ft_putendl_fd("rrb", 1);
 	return (0);
 }
 
-int rrr(t_list **stack_a, t_list **stack_b)
+int	rrr(t_list **stack_a, t_list **stack_b)
 {
 	if (ft_lstsize(*stack_a) || ft_lstsize(*stack_b) < 2)
 		return (-1);
