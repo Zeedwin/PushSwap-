@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:45:31 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/10/01 18:48:53 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/10/01 22:32:01 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ typedef struct list
 {
 	int			index;
 	int			data;
+	int			min_1;
+	int			min_2;
 	struct list	*next;
 }t_list;
 

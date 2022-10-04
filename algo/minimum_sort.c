@@ -6,7 +6,7 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 20:12:00 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/10/01 19:10:46 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/10/01 22:35:51 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,29 @@ int	find_min(t_list **stack, int n)
 void	tri_sort(t_list **stack)
 {
 	t_list	*head;
-	int		min_1;
-	int		min_2;
 
 	head = *stack;
-	min_1 = find_min(stack, -1);
-	min_2 = find_min(stack, min_1);
-	if (head->index == min_1 && head->next->index != min_2)
+	head->min_1 = find_min(stack, -1);
+	head->min_2 = find_min(stack, head->min_1);
+	if (head->index == head->min_1 && head->next->index != head->min_2)
 	{
 		ra(stack);
 		sa(stack);
 		rra(stack);
 	}
-	else if (head->index == min_2)
-		if (head->next->index == min_1)
+	else if (head->index == head->min_2)
+		if (head->next->index == head->min_1)
 			sa(stack);
 	else
 		rra(stack);
 	else
-		if (head->next->index == min_1)
+		if (head->next->index == head->min_1)
 			ra(stack);
 	else
+	{
 		sa(stack);
-	rra(stack);
+		rra(stack);
+	}
 }
 
 void	quad_sort(t_list **stack_a, t_list **stack_b)

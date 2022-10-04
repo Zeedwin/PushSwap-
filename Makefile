@@ -13,14 +13,14 @@ RM = rm -rf
 
 all: ${NAME} ${CHECK}
 ${NAME}: ${OBJS}
-	@${MAKE} -C ./Libft
-	@${CC} ${CFLAGS} ${OBJS} ./Libft/Libft.a -o ${NAME}
+	@${MAKE} -C ./Libft1
+	@${CC} ${CFLAGS} ${OBJS} ./Libft1/Libft.a -o ${NAME}
 
 ${CHECK}: ${CHECK_OBJS} 
-	@${CC} ${CFLAGS} ${CHECK_OBJS} ./Libft/Libft.a -o ${CHECK}
+	@${CC} ${CFLAGS} ${CHECK_OBJS} ./Libft1/Libft.a -o ${CHECK}
 
 clean: 
-	@${MAKE} -C ./Libft fclean
+	@${MAKE} -C ./Libft1 fclean
 	@${RM} ${OBJS}
 	@${RM} ${CHECK_OBJS}
 
