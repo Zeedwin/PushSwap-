@@ -6,41 +6,33 @@
 /*   By: jgirard- <jgirard-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 14:05:50 by jgirard-          #+#    #+#             */
-/*   Updated: 2022/03/30 04:09:38 by jgirard-         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:01:36 by jgirard-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-static int	ft_isspace(char c)
+long	ft_atoi(const char *str)
 {
-	if (c == '\t' || c == '\n' || c == '\v'
-		|| c == ' ' || c == '\r' || c == '\f')
-		return (1);
-	return (0);
-}
+	long	i;
+	long	number;
+	int		sign;
 
-int	ft_atoi(char *str)
-{
-	int	res;
-	int	sign;
-	int	i;
-
-	res = 0;
-	sign = 1;
 	i = 0;
-	while (ft_isspace(str[i]) == 1)
+	number = 0;
+	sign = 1;
+	while (str[i] && (str[i] == 32 || (str[i] >= 9 && str[i] <= 13)))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-	{	
-		if (str[i] == '-')
-			sign = sign * -1;
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
 	{
-		res = 10 * res + (str[i] - '0');
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
-	return (sign * res);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		number = (number * 10) + (str[i] - '0');
+		i++;
+	}
+	return (number * sign);
 }
